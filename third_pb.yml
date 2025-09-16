@@ -1,0 +1,14 @@
+---
+- name: First Basic PB
+  hosts: localhost
+
+  tasks:
+    - name: Installing nginx
+      yum:
+        name: nginx
+        state: present
+    - name: Starting the service
+      service:
+        name: nginx
+        state: started
+        enabled: true
