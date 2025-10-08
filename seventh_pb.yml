@@ -1,0 +1,12 @@
+---
+- name: Run a Script
+  hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: Run Script
+      shell: ./test.sh >> test.log
+      args:
+        chdir: /tmp/Script/
+        creates: test.log
