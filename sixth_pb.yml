@@ -1,0 +1,10 @@
+---
+- name: Change Permissions
+  hosts: localhost
+  connection: local
+  become: true
+  tasks:
+    - name: Change permissions of /tmp/newfile.txt
+      file:
+        path: /tmp/newfile.txt
+        mode: '0644'
