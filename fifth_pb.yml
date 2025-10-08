@@ -1,0 +1,21 @@
+---
+- name: File Module
+  hosts: localhost
+  connection: local
+  become: true
+  tasks:
+    - name: Creating a File
+      file:
+        path: /tmp/newfile.txt
+        state: touch
+        mode: u=rwx,g=rw,o=r
+        owner: root
+        group: root
+
+    - name: Creating a directory
+      file:
+        path: /tmp/myfolder
+        state: directory
+        mode: u=rwx,g=rw,o=r
+        owner: root
+        group: root
